@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MoodTracker</string>
+    <string name="comment">Commentaire</string>
+    <string name="share">Exprimez-vous...</string>
 </resources>

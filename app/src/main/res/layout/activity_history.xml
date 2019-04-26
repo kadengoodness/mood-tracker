@@ -1,9 +1,306 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".controller.HistoryActivity">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/historyStyle"
+    android:orientation="vertical"
+    android:background="#ccc">
 
-</android.support.constraint.ConstraintLayout>
+    <!--Day 7-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:id="@+id/daySevenLeft"
+            tools:background="@color/banana_yellow"
+            android:layout_weight="100"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/daySevenText"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="4dp"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                android:text="Il y a une semaine" />
+
+            <ImageView
+                android:id="@+id/daySevenButton"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="right|center"
+                android:visibility="visible"
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/ic_comment_black_48px"/>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/daySevenRight"
+            android:layout_weight="0"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+        </FrameLayout>
+    </LinearLayout>
+
+    <!--Day 6-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:id="@+id/daySixLeft"
+            tools:background="@color/light_sage"
+            android:layout_weight="80"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/daySixText"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="4dp"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                android:text="Il y a six jours" />
+
+            <ImageView
+                android:id="@+id/daySixButton"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="right|center"
+                android:visibility="visible"
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/ic_comment_black_48px"/>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/daySixRight"
+            android:layout_weight="20"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+        </FrameLayout>
+    </LinearLayout>
+
+    <!--Day 5-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:id="@+id/dayFiveLeft"
+            tools:background="@color/cornflower_blue_65"
+            android:layout_weight="60"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/dayFiveText"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="4dp"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                android:text="Il y a cinq jours" />
+
+            <ImageView
+                android:id="@+id/dayFiveButton"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="right|center"
+                android:visibility="visible"
+                android:layout_marginEnd="40dp"
+                android:src="@drawable/ic_comment_black_48px"/>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/dayFiveRight"
+            android:layout_weight="40"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+        </FrameLayout>
+    </LinearLayout>
+
+    <!--Day 4-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:id="@+id/dayFourLeft"
+            tools:background="@color/warm_grey"
+            android:layout_weight="40"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/dayFourText"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="4dp"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                android:text="Il y a quatre jours" />
+
+            <ImageView
+                android:id="@+id/dayFourButton"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="right|center"
+                android:visibility="visible"
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/ic_comment_black_48px"/>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/dayFourRight"
+            android:layout_weight="60"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+        </FrameLayout>
+    </LinearLayout>
+
+    <!--Day 3-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:id="@+id/dayThreeLeft"
+            tools:background="@color/faded_red"
+            android:layout_weight="20"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/dayThreeText"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="4dp"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                android:text="Il y a trois jours" />
+
+            <ImageView
+                android:id="@+id/dayThreeButton"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="right|center"
+                android:visibility="visible"
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/ic_comment_black_48px"/>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/dayThreeRight"
+            android:layout_weight="80"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+        </FrameLayout>
+    </LinearLayout>
+
+    <!--Day 2-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:id="@+id/dayTwoLeft"
+            tools:background="@color/banana_yellow"
+            android:layout_weight="100"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/dayTwoText"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="4dp"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                android:text="Avant-hier" />
+
+            <ImageView
+                android:id="@+id/dayTwoButton"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="right|center"
+                android:visibility="visible"
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/ic_comment_black_48px"/>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/dayTwoRight"
+            android:layout_weight="0"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+        </FrameLayout>
+    </LinearLayout>
+
+    <!--Day 1-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:id="@+id/dayOneLeft"
+            tools:background="@color/light_sage"
+            android:layout_weight="80"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/dayOneText"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="4dp"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                android:text="Hier" />
+
+            <ImageView
+                android:id="@+id/dayOneButton"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="right|center"
+                android:visibility="visible"
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/ic_comment_black_48px"/>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/dayOneRight"
+            android:layout_weight="20"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+        </FrameLayout>
+    </LinearLayout>
+
+</LinearLayout>

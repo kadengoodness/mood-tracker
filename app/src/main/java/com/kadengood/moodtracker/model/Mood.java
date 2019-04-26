@@ -1,48 +1,25 @@
 package com.kadengood.moodtracker.model;
 
-import java.util.List;
-
 /**
- * Created by sxxxden on 2/22/19.
+ * Created by kadengood on 2/22/19.
  */
+// Mood Class
 public class Mood {
-    private int color;
-    private int image;
-    private String date;
     private String comment;
     private int position;
 
-    public Mood(int color, int image, String date, String comment, int position) {
-        this.color = color;
-        this.image = image;
-        this.date = date;
+//    Constructor 1
+    public Mood(String comment, int position) {
         this.comment = comment;
         this.position = position;
     }
 
-    public int getColor() {
-        return color;
+    // Constructor 2
+    public Mood() {
+        position = 1;
+        comment = "";
     }
 
-    public void setColor(int color) {
-        this.color = color;
-    }
-
-    public int getImage() {
-        return image;
-    }
-
-    public void setImage(int image) {
-        this.image = image;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
 
     public String getComment() {
         return comment;
