@@ -14,6 +14,7 @@ import static android.content.Context.MODE_PRIVATE;
 /**
  * Created by kadengood on 3/16/19.
  */
+
 public class Storage {
 
     public static void store(Context context, Mood mood, String moodKey){

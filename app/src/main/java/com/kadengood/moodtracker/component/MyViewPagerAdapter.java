@@ -1,7 +1,6 @@
 package com.kadengood.moodtracker.component;
 
 import android.content.Context;
-import android.media.Image;
 import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
@@ -9,17 +8,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-
 import com.kadengood.moodtracker.R;
 import com.kadengood.moodtracker.utils.Utils;
-
-import java.util.List;
 
 /**
  * Created by kadengood on 3/4/19.
  */
+
 public class MyViewPagerAdapter extends PagerAdapter {
     private Context context;
+    // PICTURES FOR SMILEYS
     private int[] image = {
             R.drawable.smiley_super_happy,
             R.drawable.smiley_happy,
@@ -28,10 +26,8 @@ public class MyViewPagerAdapter extends PagerAdapter {
             R.drawable.smiley_sad,
     };
 
-
     public MyViewPagerAdapter(Context context) {
         this.context = context;
-
     }
 
     @Override

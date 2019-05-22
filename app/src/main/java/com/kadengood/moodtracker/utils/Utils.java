@@ -5,6 +5,8 @@ import com.kadengood.moodtracker.R;
 /**
  * Created by kadengood on 4/13/19.
  */
+
+// BACKGROUND COLORS
 public class Utils {
     public static int[] color = {
             R.color.banana_yellow,

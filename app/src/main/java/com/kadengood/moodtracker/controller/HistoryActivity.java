@@ -1,28 +1,18 @@
 package com.kadengood.moodtracker.controller;
 
-import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 import android.widget.Toast;
-
-import com.google.gson.Gson;
 import com.kadengood.moodtracker.R;
 import com.kadengood.moodtracker.model.Mood;
 import com.kadengood.moodtracker.utils.Storage;
 import com.kadengood.moodtracker.utils.Utils;
-
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 
 public class HistoryActivity extends AppCompatActivity {
     private FrameLayout mDayOneLeft;
@@ -49,10 +39,6 @@ public class HistoryActivity extends AppCompatActivity {
     private ImageView mDaySixButton;
     private ImageView mDaySevenButton;
 
-    private Mood mood;
-    private Calendar mCalendar;
-    private SimpleDateFormat sdf;
-
     private Mood mYesterday;
     private Mood mTwoDaysAgo;
     private Mood mThreeDaysAgo;
@@ -60,6 +46,11 @@ public class HistoryActivity extends AppCompatActivity {
     private Mood mFiveDaysAgo;
     private Mood mSixDaysAgo;
     private Mood mSevenDaysAgo;
+
+    private Calendar mCalendar;
+    private SimpleDateFormat sdf;
+
+    private FrameLayout mEmptyHistory;
 
 
     @Override
@@ -94,13 +85,12 @@ public class HistoryActivity extends AppCompatActivity {
         mDaySixButton = findViewById(R.id.daySixButton);
         mDaySevenButton = findViewById(R.id.daySevenButton);
 
+        // EMPTY HISTORY
+        mEmptyHistory = findViewById(R.id.emptyHistory);
 
-
-        // GETTING DAYS FROM PAST WEEK
+        // GET DAYS FROM PAST WEEK
         sdf = new SimpleDateFormat("ddMMyyyy");
         mCalendar = Calendar.getInstance();
-            //mCalendar.setTime(new Date());
-            //mCalendar.add(Calendar.DATE, 0);
 
         // YESTERDAY
         mCalendar.add(Calendar.DATE, -1);
@@ -137,9 +127,7 @@ public class HistoryActivity extends AppCompatActivity {
         String mPast7 = sdf.format(mCalendar.getTime());
         mSevenDaysAgo = Storage.load(this,mPast7);
 
-
-
-
+        // CALL FUNCTION FOR EACH DAY
         manageView(mYesterday, mDayOneLeft, mDayOneRight, mDayOneButton);
         manageView(mTwoDaysAgo, mDayTwoLeft, mDayTwoRight, mDayTwoButton);
         manageView(mThreeDaysAgo, mDayThreeLeft, mDayThreeRight, mDayThreeButton);
@@ -148,28 +136,27 @@ public class HistoryActivity extends AppCompatActivity {
         manageView(mSixDaysAgo, mDaySixLeft, mDaySixRight, mDaySixButton);
         manageView(mSevenDaysAgo, mDaySevenLeft, mDaySevenRight, mDaySevenButton);
 
-
-
         }
 
 
-
+    ///////////////////
+    //  MANAGE BARS  //
+    ///////////////////
     private void manageView(final Mood mood, FrameLayout leftFrame, FrameLayout rightFrame, ImageView commentButton) {
 
-        //MISSING YESTERDAY MOOD
+        // MISSING DAY
         if (mood == null) {
-            // Turn bar invisible
-            leftFrame.setVisibility(View.INVISIBLE);
+            leftFrame.setVisibility(View.INVISIBLE);  // Turn bar invisible
         }
-        else {
-            //MANAGE YESTERDAY LAYOUTS
-            // <<<Colors>>>
-            leftFrame.setBackgroundResource(Utils.color[mood.getPosition()]);
 
-            // Utils.color();
+        // BARS' COLOR & LENGTH
+        else {
+            leftFrame.setBackgroundResource(Utils.color[mood.getPosition()]); // Colors
+            mEmptyHistory.setVisibility(View.GONE); // FrameLayout for empty history
+
+
             switch (mood.getPosition()) {
                 case 0:
-                    // Frames' length
                     leftFrame.setLayoutParams(new LinearLayout.LayoutParams(0, FrameLayout.LayoutParams.MATCH_PARENT, 100));
                     rightFrame.setLayoutParams(new LinearLayout.LayoutParams(0, FrameLayout.LayoutParams.MATCH_PARENT, 0));
                     break;
@@ -191,20 +178,17 @@ public class HistoryActivity extends AppCompatActivity {
                     break;
             }
 
-            //MISSING COMMENT
+            // MISSING COMMENT
             if (mood.getComment().isEmpty()) {
-                // Turn button invisible
-                commentButton.setVisibility(View.INVISIBLE);
+                commentButton.setVisibility(View.INVISIBLE); // Turn button invisible
             }
+            // DISPLAY COMMENT
             else{
-                //DISPLAY COMMENT
-                commentButton.setVisibility(View.VISIBLE);
+                commentButton.setVisibility(View.VISIBLE); // Turn button visible
                 commentButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v)
                     {
-
-                        // Display comment
                          Toast toast=Toast.makeText(getApplicationContext(),mood.getComment(),Toast.LENGTH_SHORT);
                          toast.show();
                     }

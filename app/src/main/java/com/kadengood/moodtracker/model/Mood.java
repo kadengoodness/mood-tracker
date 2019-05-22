@@ -1,14 +1,15 @@
 package com.kadengood.moodtracker.model;
 
+
 /**
  * Created by kadengood on 2/22/19.
  */
-// Mood Class
+
 public class Mood {
     private String comment;
     private int position;
 
-//    Constructor 1
+    // Constructor 1
     public Mood(String comment, int position) {
         this.comment = comment;
         this.position = position;
